@@ -129,8 +129,15 @@ def parse_cards(html: str, adventure_name: str):
     results = []
     for c in cards:
         name = _first_text(c.select_one(".seh_name span.name"))
+
+        # 랭킹
         rank_text = _find_value_block(c, "랭킹")
+
+        # 버프점수 → 없으면 4인 값으로 대체
         buff_text = _find_value_block(c, "버프점수")
+        if not buff_text:
+            buff_text = _find_value_block(c, "4인")
+
         results.append([
             adventure_name,
             name,
