@@ -138,6 +138,19 @@ def parse_cards(html: str, adventure_name: str):
         if not buff_text:
             buff_text = _find_value_block(c, "4인")
 
+        # 랭킹
+        rank_text = _find_value_block(c, "랭킹")
+
+        # 딜러 캐릭터
+        if rank_text:
+            buff_text = None  # 딜러는 buff_text 무시
+
+        # 버프 캐릭터
+        else:
+            buff_text = _find_value_block(c, "버프점수")
+            if not buff_text:
+                buff_text = _find_value_block(c, "4인")
+
         results.append([
             adventure_name,
             name,
