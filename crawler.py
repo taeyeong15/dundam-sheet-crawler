@@ -11,7 +11,7 @@ from playwright.sync_api import sync_playwright
 # --- 설정 ---
 SERVER_ID = "adven"  # 던담 검색 시 사용되는 서버 ID
 GOOGLE_SHEET_NAME = "레이드 공대표"  # 메인 시트 이름
-ADVENTURE_NAMES_SHEET_NAME = "시트2"   # 모험단명을 읽어올 시트 이름
+ADVENTURE_NAMES_SHEET_NAME = "모험단"   # 모험단명을 읽어올 시트 이름
 # ------------
 
 BASE_URL = "https://dundam.xyz/search"
